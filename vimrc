@@ -31,14 +31,16 @@ colorscheme ir_black
 autocmd FileType python autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd FileType html autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd FileType css autocmd BufWritePre <buffer> :%s/\s\+$//e
-:map ; $
-:map - 1G
-:map \ $G
-:imap jj <Esc>
-:map zz <Esc>:wq
-:map <c-j> <c-w>j
-:map <c-k> <c-w>k
-:map <c-l> <c-w>l
-:map <c-h> <c-w>h
 
-:let g:pep8_ignore="E123,E128"
+map ; $
+map - 1G
+map \ $G
+imap jj <Esc>
+map zz <Esc>:wq
+
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+
+let g:pep8_ignore="E123,E128"
