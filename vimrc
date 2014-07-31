@@ -31,7 +31,10 @@ colorscheme ir_black
 autocmd FileType python autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd FileType html autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd FileType css autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType markdown autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 map ; $
 map - 1G
@@ -46,4 +49,6 @@ map <c-h> <c-w>h
 
 map <C-n> :NERDTreeToggle<CR>
 
-let g:pep8_ignore="E123,E128"
+let g:pep8_ignore = "E123,E126,E127,E128"
+let g:pymode_lint_ignore = "W0611"
+let NERDTreeIgnore = ['\.pyc$']
