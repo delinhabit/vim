@@ -42,3 +42,14 @@ autocmd FileType css autocmd BufWritePre <buffer> :%s/\s\+$//e
 :map <c-h> <c-w>h
 
 :let g:pep8_ignore="E123,E128"
+
+augroup filetypedetect
+    au! BufRead,BufNewFile *.m,*.oct set filetype=octave
+augroup END
+
+if has("autocmd") && exists("+omnifunc")
+    autocmd Filetype octave
+    \ if &omnifunc == "" |
+    \  setlocal omnifunc=syntaxcomplete#Complete |
+    \ endif
+endif
