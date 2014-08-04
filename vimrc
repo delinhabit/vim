@@ -64,3 +64,10 @@ if has("autocmd") && exists("+omnifunc")
     \ endif
 endif
 
+function TrimEndLines()
+    let save_cursor = getpos(".")
+    :silent! %s#\($\n\s*\)\+\%$##
+    call setpos('.', save_cursor)
+endfunction
+
+autocmd FileType python autocmd BufWritePre <buffer> call TrimEndLines()
