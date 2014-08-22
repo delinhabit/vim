@@ -50,6 +50,7 @@ map <c-h> <c-w>h
 
 map <C-n> :NERDTreeToggle<CR>
 
+let g:syntastic_javascript_checkers = ['gjslint']
 let g:pep8_ignore = "E123,E126,E127,E128"
 let g:pymode_lint_ignore = "W0611"
 let NERDTreeIgnore = ['\.pyc$']
