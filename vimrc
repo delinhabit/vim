@@ -31,6 +31,7 @@ colorscheme ir_black
 autocmd FileType python autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd FileType html autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd FileType css autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType javascript autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd FileType markdown autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
