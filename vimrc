@@ -26,7 +26,7 @@ set showmode
 set foldmethod=indent
 set foldlevel=99
 
-colorscheme ir_black
+colorscheme distinguished
 
 autocmd FileType python autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd FileType html autocmd BufWritePre <buffer> :%s/\s\+$//e
