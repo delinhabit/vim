@@ -72,3 +72,4 @@ function TrimEndLines()
 endfunction
 
 autocmd FileType python autocmd BufWritePre <buffer> call TrimEndLines()
+autocmd FileType octave setlocal cc=120
