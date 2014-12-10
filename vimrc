@@ -51,9 +51,10 @@ map <C-n> :NERDTreeToggle<CR>
 
 let g:syntastic_javascript_checkers = ['gjslint']
 let g:syntastic_python_checkers = ['flake8']
-let g:pep8_ignore = "E123,E126,E127,E128"
-let g:pymode_lint_ignore = "W0401"
 let g:syntastic_python_flake8_args='--ignore=F403'
+let g:pep8_ignore = "E123,E126,E127,E128"
+let g:pymode_lint_write = 0
+let g:pymode_lint_ignore = "W0401"
 let NERDTreeIgnore = ['\.pyc$']
 
 augroup filetypedetect
