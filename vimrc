@@ -13,8 +13,9 @@ set showmatch
 set incsearch
 set cindent
 set expandtab
-set colorcolumn=80
+set colorcolumn=120
 set number
+set pastetoggle=<F2>
 cabbrev Q quit
 cabbrev W write
 cabbrev Wq wq
@@ -51,11 +52,12 @@ map <C-n> :NERDTreeToggle<CR>
 
 let g:syntastic_javascript_checkers = ['gjslint']
 let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_flake8_args='--ignore=F403 --max-line-length=80'
+let g:syntastic_python_flake8_args='--ignore=F403'
+let g:syntastic_python_pylint_post_args='--max-line-length=120'
 let g:pep8_ignore = "E123,E126,E127,E128"
 let g:pymode_lint_write = 0
 let g:pymode_lint_ignore = "W0401"
-let NERDTreeIgnore = ['\.pyc$']
+let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 
 augroup filetypedetect
     au! BufRead,BufNewFile *.m,*.oct set filetype=octave
