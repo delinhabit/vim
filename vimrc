@@ -16,6 +16,7 @@ set expandtab
 set colorcolumn=120
 set number
 set pastetoggle=<F2>
+let mapleader=","
 cabbrev Q quit
 cabbrev W write
 cabbrev Wq wq
