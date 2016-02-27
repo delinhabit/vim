@@ -61,6 +61,7 @@ let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 
 augroup filetypedetect
     au! BufRead,BufNewFile *.m,*.oct set filetype=octave
+    au! BufRead,BufNewFile *.sls set filetype=yaml
 augroup END
 
 if has("autocmd") && exists("+omnifunc")
