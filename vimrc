@@ -6,6 +6,8 @@ filetype on
 filetype plugin indent on
 
 set backspace=indent,eol,start
+set nobackup
+set noswapfile
 set nocompatible
 set autoindent
 set smartindent
@@ -80,3 +82,4 @@ endfunction
 
 autocmd FileType python autocmd BufWritePre <buffer> call TrimEndLines()
 autocmd FileType octave setlocal cc=120
+autocmd FileType html setlocal tabstop=2 shiftwidth=2 cc=120 
