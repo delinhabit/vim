@@ -1,0 +1,21 @@
+set spell
+set backspace=indent,eol,start
+set nobackup
+set noswapfile
+set nocompatible
+set autoindent
+set smartindent
+set showmatch
+set incsearch
+set cindent
+set expandtab
+set colorcolumn=80
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set smarttab
+
+map ; $
+cabbrev Q quit
+cabbrev W write
+cabbrev Wq wq
