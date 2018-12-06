@@ -6,6 +6,7 @@ Plug 'mxw/vim-jsx'
 Plug 'leshill/vim-json'
 Plug 'tomasiser/vim-code-dark'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'maralla/completor.vim'
 
 " Other plugins
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
