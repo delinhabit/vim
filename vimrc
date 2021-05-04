@@ -12,10 +12,9 @@ Plug 'maralla/completor.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
-Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 call plug#end()
@@ -45,6 +44,10 @@ set foldlevel=99
 set laststatus=2
 set ttimeoutlen=50
 
+highlight SpecialKey ctermfg=1
+set list
+set listchars=tab:T>
+
 " Editor mappings
 let mapleader=","
 map ; $
@@ -69,9 +72,10 @@ let g:jsx_ext_required = 0
 " ALE configuration
 let g:ale_linters = {
 \   'javascript': ['eslint'],
-\   'python': ['flake8'],
+\   'python': ['pyflakes'],
 \}
 let g:ale_fixers = {'python': ['isort']}
+let g:ale_fix_on_save = 1
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
 let g:airline#extensions#ale#enabled = 1
