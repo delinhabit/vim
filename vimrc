@@ -12,7 +12,7 @@ Plug 'maralla/completor.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'dense-analysis/ale'
+Plug 'dense-analysis/ale', { 'tag': 'v3.1.0' }
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'honza/vim-snippets'
@@ -31,7 +31,7 @@ set showmatch
 set incsearch
 set cindent
 set expandtab
-set colorcolumn=80
+set colorcolumn=120
 set number
 set pastetoggle=<F2>
 set shiftwidth=4
@@ -59,11 +59,12 @@ cabbrev Q quit
 cabbrev W write
 cabbrev Wq wq
 
+" Folding / expanding
+nnoremap <space> za
+vnoremap <space> zf
+
 " Run gsv to reload the vimrc file
 nnoremap gsv :so $MYVIMRC<CR>
-
-" UltiSnips configuration
-autocmd BufNewFile,BufRead *.py setlocal filetype=python.django
 
 " JavaScript configuration
 let g:javascript_plugin_flow = 1
@@ -71,11 +72,16 @@ let g:jsx_ext_required = 0
 
 " ALE configuration
 let g:ale_linters = {
-\   'javascript': ['eslint'],
-\   'python': ['pyflakes'],
+\    'javascript': ['eslint'],
+\    'python': ['flake8']
 \}
-let g:ale_fixers = {'python': ['isort']}
-let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+\    'python': ['isort'],
+\    'javascript': ['eslint']
+\}
+let g:ale_javascript_eslint_executable = 'yarn run eslint'
+let g:ale_javascript_eslint_use_global = 1
+let g:ale_fix_on_save = 0
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
 let g:airline#extensions#ale#enabled = 1
@@ -87,3 +93,6 @@ nmap <F3> <Plug>(ale_fix)
 " NERDTree configuration
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 map <C-n> :NERDTreeToggle %<CR>
+
+" YAML files configuration
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
